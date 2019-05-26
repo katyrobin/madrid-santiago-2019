@@ -1,6 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+``` r
+# make readme
+rmarkdown::render("README.Rmd", output_format = "github_document", output_file = "README.md") 
+```
+
 # madrid-santiago-2019
 
 <!-- badges: start -->
@@ -18,5 +23,10 @@ Next, the index file was generated as follows:
 
 ``` r
 index = photomapr::photobook_index(
-  photobook_name = "From Madrid to Santiago de Compostela, 2019", photobook_author = "Robin and Katy", photobook_repo = "katyrobin/madrid-santiago-2019", photobook_description = "Photobook of our trip from Madrid to Santiago via Salamanca, Ourense and the Camino de Compostela.")
+  photobook_name = "From Madrid to Santiago de Compostela, 2019",
+  photobook_author = "Robin and Katy",
+  photobook_repo = "katyrobin/madrid-santiago-2019",
+  photobook_description = "Photobook of our trip from Madrid to Santiago via Salamanca, Ourense and the Camino de Compostela."
+)
+writeLines(index, "index.Rmd")
 ```
