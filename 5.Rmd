@@ -1,0 +1,11 @@
+# 5
+
+  
+
+
+
+```{r, fig.cap="Arrival of the peregrinos in Santiago. Mission accomplished!"}
+knitr::include_graphics("NA")
+```
+
+

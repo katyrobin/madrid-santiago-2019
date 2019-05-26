@@ -1,0 +1,11 @@
+# 1
+
+  
+
+
+
+```{r, fig.cap="Like most trips, this one has an obligatory bike photo. Saying goodbye to Leeds."}
+knitr::include_graphics("IMG_20190518_064058.jpg")
+```
+
+
