@@ -1,0 +1,5 @@
+book_filename: "madrid-santiago-2019"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
