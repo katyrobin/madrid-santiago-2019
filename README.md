@@ -105,3 +105,15 @@ To help automate the process of adding captions, used the function `photo_add_ca
 photos_geo$caption = photomapr::photo_add_captions(photos_geo$SourceFile)
 ```
 
+The photos were rather large initially, so they were shrunk with the following code:
+
+``` r
+f = list.files(".", ".jpg")
+i = f[length(f)]
+for(i in f) {
+  im = magick::image_read(i)
+  i_smaller = magick::image_scale(image = im, geometry = magick::geometry_size_pixels(width = 800))
+  magick::image_write(i_smaller, i)
+}
+```
+
