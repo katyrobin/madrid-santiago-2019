@@ -21,7 +21,7 @@ g3 = p[p$group == 3, ]
 g4 = p[p$group == 4, ]
 ````
 
-<!-- # Welcome {-} -->
+# Welcome {-}
 
 Welcome to our photobook of our travels through Spain in May 2019.
 Enjoy!

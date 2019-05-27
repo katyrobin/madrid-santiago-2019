@@ -8,3 +8,5 @@ libs/
 madrid-santiago-2019.html
 *.html
 *.log
+*.pdf
+rsconnect
