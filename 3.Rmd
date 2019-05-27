@@ -1,8 +1,19 @@
-# 3
+# Salamanca
 
-  
+```{r}
+# leaflet() %>% 
+#   addTiles() %>% 
+#   addPopups(data = p[1:2, ], popup = c(
+#     "Leeds rail station",
+#     "Destination: Madrid"
+#   )) 
+photomap(g3$SourceFile[c(2, 5)], maxZoom = 14)
+# %>% 
+#   addMiniMap(zoomLevelOffset = -7)
+```
 
 
+We took the train to Salamanca, where Robin did an Erasmus year.
 
 ```{r, fig.cap="Arrival in Salamanca. Enjoying the beauty of the city and the rivers."}
 knitr::include_graphics("IMG_20190520_195619.jpg")
@@ -11,37 +22,36 @@ knitr::include_graphics("IMG_20190520_195619.jpg")
 
 
 ```{r, fig.cap="Panoramic of the historic bridge over the river and the mysterious fluff that fell from the trees like snow."}
-knitr::include_graphics("IMG_20190520_201047.jpg")
+knitr::include_graphics("PANO_20190520_195852.jpg")
 ```
 
 
 
 ```{r, fig.cap="Us on the historic bridge, with the main cathedral of Salamanca in the background"}
-knitr::include_graphics("IMG_20190520_201518.jpg")
+knitr::include_graphics("IMG_20190520_201047.jpg")
 ```
 
 
 
 ```{r, fig.cap="Makeshift skatepark outside a dissused church. People have been worshipping here for almost 2 decades. 12 years ago Robin was one of them!"}
+knitr::include_graphics("IMG_20190520_201518.jpg")
+```
+
+
+
+```{r, fig.cap="Peaceful 3 course meal in the hidden terreza of the famous Don Quijote cafe.", out.width="50%"}
+i = magick::image_read("IMG_20190521_143559.jpg")
+# ir = magick::image_rotate(image = i, degrees = 90)
+# magick::image_write(ir, "IMG_20190521_143559.jpg")
 knitr::include_graphics("IMG_20190521_143559.jpg")
 ```
 
 
 
-```{r, fig.cap="Peaceful 3 course meal in the hidden terreza of the famous Don Quijote cafe."}
+
+```{r, fig.cap="Casa de las Conchas, famous historic building in the old city that houses the public library."}
 knitr::include_graphics("IMG_20190521_153335.jpg")
 ```
 
-
-
-```{r, fig.cap=""}
-knitr::include_graphics("IMG_20190522_161635.jpg")
-```
-
-
-
-```{r, fig.cap="Casa de las Conchas, famous historic building in the old city that houses the public library."}
-knitr::include_graphics("IMG_20190522_161735.jpg")
-```
 
 

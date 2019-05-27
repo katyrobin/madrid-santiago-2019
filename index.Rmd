@@ -13,9 +13,15 @@ description: "Photobook of our trip from Madrid to Santiago via Salamanca, Ouren
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
+knitr::opts_chunk$set(echo = FALSE, out.width = "90%")
+p = sf::read_sf("p.geojson")
+library(leaflet)
+library(photomapr)
+g3 = p[p$group == 3, ]
+g4 = p[p$group == 4, ]
 ````
 
-# Welcome {-}
+<!-- # Welcome {-} -->
 
+Welcome to our photobook of our travels through Spain in May 2019.
+Enjoy!

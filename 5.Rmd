@@ -1,11 +1,8 @@
-# 5
-
-  
-
+# Santiago de Compostela
 
 
 ```{r, fig.cap="Arrival of the peregrinos in Santiago. Mission accomplished!"}
-knitr::include_graphics("NA")
+knitr::include_graphics("IMG_20190525_163802.jpg")
 ```
 
 

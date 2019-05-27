@@ -67,6 +67,8 @@ f = read.csv(header = FALSE, stringsAsFactors = FALSE, text =
 slideshow(f$V1)
 ```
 
+## Set-up
+
 The next task was to create a template repository. The was done using
 RStudio’s GUI, and selecting the bookdown template when creating a new
 project (I’m not sure how to do that from the command line).
@@ -90,6 +92,8 @@ photos_geo = photos_sf(f$V1)
 plot(photos_geo)
 ```
 
+## Grouping photos
+
 Chapters are the building blocks of books.
 To divide the photos into chapters, the following code was used:
 
@@ -99,13 +103,31 @@ photos_geo$group = photo_group(photos_geo, 5)
 mapview::mapview(photos_geo, zcol = "group")
 ```
 
+## Adding captions
+
 To help automate the process of adding captions, used the function `photo_add_caption()`.
 
 ``` r
 photos_geo$caption = photomapr::photo_add_captions(photos_geo$SourceFile)
 ```
 
-The photos were rather large initially, so they were shrunk with the following code:
+## Creating the photomap
+
+The photobook was created with this command:
+
+``` r
+photomapr::photobook(
+  photo = photos_geo,
+  index = index,
+  groups = photos_geo$group,
+  captions = photos_geo$caption,
+  dir_out = "."
+  )
+```
+
+## Compressing giant photos
+
+The photos were rather large initially (smartphones now save photos with 1000+ pixels, in one dimension!), so they were shrunk with the following code:
 
 ``` r
 f = list.files(".", ".jpg")
@@ -115,5 +137,28 @@ for(i in f) {
   i_smaller = magick::image_scale(image = im, geometry = magick::geometry_size_pixels(width = 800))
   magick::image_write(i_smaller, i)
 }
+```
+
+That subsequently became the function `photo_compress_width()`.
+
+## Using photos in the root directory
+
+In hindsight, it makes sense to do image pre-processing before creating the photobook.
+Imagining that we had started with all the nicely compressed photos in the root directory, we could have started (again) as follows:
+
+``` r
+f = list.files(".", ".jpg")
+p = photos_sf(f)
+p$group = photo_group(p, 5)
+sf::write_sf(p, "p.geojson")
+```
+## Building the books
+
+After editing the `index.Rmd` and chapter `.Rmd` files, the book was ready to compile.
+To create the pdf version, the following command was used:
+
+``` r
+rmarkdown::render_site(output_format = 'bookdown::pdf_book', encoding = 'UTF-8')
+browseURL("_book/madrid-santiago-2019.pdf")
 ```
 
